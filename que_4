@@ -1,0 +1,105 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+class Shape {
+private:
+    string color;
+    double area;
+
+public:
+    void setColor(string c) {
+        color = c;
+    }
+
+    string getColor() {
+        return color;
+    }
+
+    void setArea(double a) {
+        area = a;
+    }
+
+    double getArea() {
+        return area;
+    }
+
+    virtual void display() {
+        cout << "Shape" << endl;
+    }
+};
+
+class Circle : public Shape {
+private:
+    double radius;
+
+public:
+    void setRadius(double r) {
+        radius = r;
+    }
+
+    void calculateArea() {
+        double a = 3.14 * radius * radius;
+        setArea(a);
+    }
+
+    void display() override {
+        cout << "Circle" << endl;
+        cout << "Color: " << getColor() << endl;
+        cout << "Radius: " << radius << endl;
+        cout << "Area: " << getArea() << endl;
+    }
+};
+
+class Rectangle : public Shape {
+private:
+    double length, width;
+
+public:
+    void setLength(double l) {
+        length = l;
+    }
+
+    void setWidth(double w) {
+        width = w;
+    }
+
+    void calculateArea() {
+        double a = length * width;
+        setArea(a);
+    }
+
+    void display() override {
+        cout << "Rectangle" << endl;
+        cout << "Color: " << getColor() << endl;
+        cout << "Length: " << length << endl;
+        cout << "Width: " << width << endl;
+        cout << "Area: " << getArea() << endl;
+    }
+};
+
+int main() {
+
+    Circle c;
+    c.setColor("Black");
+    c.setRadius(4);
+    c.calculateArea();
+
+    Rectangle r;
+    r.setColor("green");
+    r.setLength(12);
+    r.setWidth(5);
+    r.calculateArea();
+
+    Shape *shapes[2];
+
+    shapes[0] = &c;
+    shapes[1] = &r;
+
+    for (int i = 0; i < 2; i++) {
+        shapes[i]->display();
+        cout << endl;
+    }
+
+    return 0;
+}
