@@ -14,7 +14,7 @@ This project contains simple C++ programs created to understand and practice the
 
 
 ### Output
-https://drive.google.com/drive/folders/16bzEL0vbZ-OBCYNhz5vuBWH3f8WGxvm5?usp=sharing
+https://drive.google.com/drive/folders/1dQRF9MmSLJkZsWBBbzVSNy2tpkuLvp4j?usp=sharing
 
 
 
